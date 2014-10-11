@@ -27,7 +27,7 @@
 #    THIS SCRIPT IS FREEWARE AND IS NOT FOR RE-SALE     #
 #########################################################
 
-require("../../../wp-blog-header.php");
+require("../../../wp-load.php");
 global $wpdb;
 $dplus = get_option('DonatePlus');
 $email_IPN_results = get_option('IPN_email'); 

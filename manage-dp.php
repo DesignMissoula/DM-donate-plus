@@ -2,8 +2,13 @@
 if( !class_exists('ManageDonatePlus') ):
 	class ManageDonatePlus{
 		function ManageDonatePlus() { //constructor
-			if( $_GET['page'] == 'DonatePlus' && ( $_GET['doaction'] || $_GET['delete'] ) )
-				$this->Actions();
+			if( isset($_GET['page']) && ( isset($_GET['doaction']) || isset($_GET['delete']) )){
+				if( $_GET['page'] == 'DonatePlus' && ( $_GET['doaction'] || $_GET['delete'] ) ){
+					$this->Actions();
+				}
+				
+			}
+				
 				
 			if( $_POST['updatedonor'] )
 				$this->Update();
