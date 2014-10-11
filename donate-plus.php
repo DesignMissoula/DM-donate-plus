@@ -4,7 +4,7 @@ Plugin Name: Donate Plus
 Plugin URI: http://devbits.ca
 Description: Donation form. Recognition wall.  Donation total tracker. PayPal integration. 
 Author: M. Fitzpatrick, Bradford Knowlton (updates for WP 4.0)
-Version: 1.96
+Version: 1.97
 Author URI: http://www.devbits.ca/
 GitHub Plugin URI: https://github.com/DesignMissoula/DM-donate-plus
 GitHub Branch: master
@@ -63,12 +63,12 @@ if( !class_exists('DonatePlus') ):
 				add_action( 'admin_menu', array($this, 'AddPanel') );
 				add_action( 'admin_head', array($this, 'icon_css') );
 				#Update Settings on Save
-				if( $_POST['action'] == 'dplus_update' )
+				if( isset($_POST['action']) && $_POST['action'] == 'dplus_update' )
 					add_action( 'init', array($this,'SaveSettings') );
 				#Save Default Settings
 					add_action( 'init', array($this, 'DefaultSettings') );
 				#Uninstall Donate Plus
-				if( $_POST['action'] == 'dplus_delete' )
+				if( isset($_POST['action']) && $_POST['action'] == 'dplus_delete' )
 					add_action( 'init', array($this,'UninstallDP') );
 				#Comment Box Limit
 					add_action( 'wp_head', array($this, 'TextLimitJS') );
@@ -82,7 +82,7 @@ if( !class_exists('DonatePlus') ):
 			//LOCALIZATION
 				#Place your language file in the plugin folder and name it "wpfrom-{language}.mo"
 				#replace {language} with your language value from wp-config.php
-				load_plugin_textdomain( 'dplus', '/wp-content/plugins/donate-plus' );
+				load_plugin_textdomain( 'dplus', false, dirname( plugin_basename( __FILE__ ) ) );
 			//INSTALL TABLE
 				#Runs the database installation for the wp_donations table
 				register_activation_hook( __FILE__, array($this, 'DonatePlusInstall') );
