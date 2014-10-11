@@ -4,7 +4,7 @@ Plugin Name: Donate Plus
 Plugin URI: http://devbits.ca
 Description: Donation form. Recognition wall.  Donation total tracker. PayPal integration. 
 Author: M. Fitzpatrick, Bradford Knowlton (updates for WP 4.0)
-Version: 1.98
+Version: 1.99
 Author URI: http://www.devbits.ca/
 GitHub Plugin URI: https://github.com/DesignMissoula/DM-donate-plus
 GitHub Branch: master
