@@ -10,7 +10,7 @@ if( !class_exists('ManageDonatePlus') ):
 			}
 				
 				
-			if( $_POST['updatedonor'] )
+			if( isset($_POST['updatedonor']) &&  $_POST['updatedonor'] )
 				$this->Update();
 		}
 		

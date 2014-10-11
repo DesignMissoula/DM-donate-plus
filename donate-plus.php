@@ -4,7 +4,7 @@ Plugin Name: Donate Plus
 Plugin URI: http://devbits.ca
 Description: Donation form. Recognition wall.  Donation total tracker. PayPal integration. 
 Author: M. Fitzpatrick, Bradford Knowlton (updates for WP 4.0)
-Version: 1.95
+Version: 1.96
 Author URI: http://www.devbits.ca/
 GitHub Plugin URI: https://github.com/DesignMissoula/DM-donate-plus
 GitHub Branch: master
@@ -47,7 +47,13 @@ $currency = array( 	'USD' => array( 'type' => __('U.S. Dollar', 'dplus'), 			'sy
 					'SGD' => array( 'type' => __('Singapore Dollar', 'dplus'), 		'symbol' => '$'	) 
 				);
 
-wp_enqueue_script('jquery'); 
+ 
+
+function donate_plus_scripts() {
+	wp_enqueue_script('jquery');
+}
+
+add_action( 'wp_enqueue_scripts', 'donate_plus_scripts' );
 
 if( !class_exists('DonatePlus') ):
 	class DonatePlus{
