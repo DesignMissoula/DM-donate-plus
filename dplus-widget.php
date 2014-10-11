@@ -85,15 +85,15 @@ function widget_donateplus_init() {
 	
 	// This registers our widget so it appears with the other available
 	// widgets and can be dragged and dropped into any active sidebars.
-	register_sidebar_widget(array('Donate Plus Form', 'widgets'), 'widget_donateplusform');
-	register_sidebar_widget(array('Donate Plus Total', 'widgets'), 'widget_donateplustotal');
-	register_sidebar_widget(array('Donate Plus Wall', 'widgets'), 'widget_donatepluswall');
+	wp_register_sidebar_widget(array('Donate Plus Form', 'widgets'), 'widget_donateplusform');
+	wp_register_sidebar_widget(array('Donate Plus Total', 'widgets'), 'widget_donateplustotal');
+	wp_register_sidebar_widget(array('Donate Plus Wall', 'widgets'), 'widget_donatepluswall');
 
 	// This registers our optional widget control form. Because of this
 	// our widget will have a button that reveals a 300x100 pixel form.
-	register_widget_control(array('Donate Plus Form', 'widgets'), 'widget_donateplusform_control', 300, 100);
-	register_widget_control(array('Donate Plus Total', 'widgets'), 'widget_donateplustotal_control', 300, 100);
-	register_widget_control(array('Donate Plus Wall', 'widgets'), 'widget_donatepluswall_control', 300, 100);
+	wp_register_sidebar_widget(array('Donate Plus Form', 'widgets'), 'widget_donateplusform_control', 300, 100);
+	wp_register_sidebar_widget(array('Donate Plus Total', 'widgets'), 'widget_donateplustotal_control', 300, 100);
+	wp_register_sidebar_widget(array('Donate Plus Wall', 'widgets'), 'widget_donatepluswall_control', 300, 100);
 }
 
 // Run our code later in case this loads prior to any required plugins.
