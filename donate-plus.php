@@ -4,7 +4,7 @@ Plugin Name: Donate Plus
 Plugin URI: http://devbits.ca
 Description: Donation form. Recognition wall.  Donation total tracker. PayPal integration. 
 Author: M. Fitzpatrick, Bradford Knowlton (updates for WP 4.0)
-Version: 1.99.1
+Version: 1.99.2
 Author URI: http://www.devbits.ca/
 GitHub Plugin URI: https://github.com/DesignMissoula/DM-donate-plus
 GitHub Branch: master
@@ -324,7 +324,7 @@ if( !class_exists('DonatePlus') ):
                 </form>       
                  <h2><?php _e('Shortcodes', 'dplus');?></h2>
                <p><code>[donateplus]</code><br /><?php _e('This shortcode will display the Donate Plus donation form', 'dplus'); ?></p>
-               <p><code>[donorwall]</code><br /><?php _e('This shortcode will display the Donor Recognition Wall. <em>Optional attribute:</em> <code>title</code> is wrapped within a <code>&lt;h2&gt;</code> tag.  Usage is <code>[donorwall title=\'Donor Recognition Wall\']', 'dplus'); ?></p>
+               <p><code>[donorwall]</code><br /><?php _e('This shortcode will display the Donor Recognition Wall. <em>Optional attribute:</em> <code>title</code> is wrapped within a <code>&lt;h2&gt;</code> tag.  Usage is <code>[donorwall title=\'Donor Recognition Wall\']</code>', 'dplus'); ?></p>
                <p><code>[donatetotal]</code> <br /><?php _e('This shortcode will display the total donations received. <em>Optional attributes:</em> <code>prefix</code> is the currency symbol (ie. $), <code>suffix</code> is the currency code (ie. USD), <code>type</code> is the english description (ie. U.S. Dollar). Usage is <code>[donatetotal prefix=\'1\', suffix=\'1\', type=\'0\']</code>. 1 will show, 0 will hide.', 'dplus'); ?></p>
                <h2><?php _e('Instant Payment Notification URL', 'dplus');?></h2>
                <p><code><?php echo str_replace(ABSPATH, trailingslashit(get_option('siteurl')), dirname(__FILE__)).'/paypal.php';?></code><br /><?php _e('This is your IPN Notification URL.  If you have issues with your site receiving your PayPal payments, be sure to manually set this URL in your PayPal Profile IPN settings.  You can also view your ', 'dplus');?> <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_display-ipns-history"><?php _e('IPN History on PayPal','dplus');?></a></p>
