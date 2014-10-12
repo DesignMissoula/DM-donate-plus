@@ -4,7 +4,7 @@ Plugin Name: Donate Plus
 Plugin URI: http://devbits.ca
 Description: Donation form. Recognition wall.  Donation total tracker. PayPal integration. 
 Author: M. Fitzpatrick, Bradford Knowlton (updates for WP 4.0)
-Version: 1.99
+Version: 1.99.1
 Author URI: http://www.devbits.ca/
 GitHub Plugin URI: https://github.com/DesignMissoula/DM-donate-plus
 GitHub Branch: master
@@ -61,7 +61,7 @@ if( !class_exists('DonatePlus') ):
 			//ACTIONS
 				#Add Settings Panel
 				add_action( 'admin_menu', array($this, 'AddPanel') );
-				add_action( 'admin_head', array($this, 'icon_css') );
+				// add_action( 'admin_head', array($this, 'icon_css') );
 				#Update Settings on Save
 				if( isset($_POST['action']) && $_POST['action'] == 'dplus_update' )
 					add_action( 'init', array($this,'SaveSettings') );
@@ -91,7 +91,7 @@ if( !class_exists('DonatePlus') ):
 		
 		function AddPanel(){
 				global $manageDP;
-			add_menu_page( __("Donate Plus",'dplus'), __("Donate Plus",'dplus'), 10, 'DonatePlus', array($manageDP, 'Manage'), 'div' );
+			add_menu_page( __("Donate Plus",'dplus'), __("Donate Plus",'dplus'), 10, 'DonatePlus', array($manageDP, 'Manage'), 'dashicons-heart' );
 			add_submenu_page( 'DonatePlus', 'Settings', 'Settings', 10, 'donateplusSettings', array($this, 'Settings') );
 		}
 		function icon_css(){
